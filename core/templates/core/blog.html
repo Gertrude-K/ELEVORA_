@@ -1,400 +1,435 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Blog - Flexor Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+{% block title %}ELEVORA Blog | Technology Insights{% endblock %}
 
-  <!-- Favicons -->
-  <link href="{% static 'core/assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'core/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+{% block content %}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+    .elevora-blog {
+        padding: 60px 0;
+        background: #fff;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'core/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'core/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'core/assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'core/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'core/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    .elevora-blog .section-heading {
+        margin-bottom: 40px;
+    }
 
-  <!-- Main CSS File -->
-  <link href="{% static 'core/assets/css/main.css' %}" rel="stylesheet">
+    .elevora-blog .section-heading h2 {
+        font-size: 34px;
+        font-weight: 700;
+        color: #222;
+    }
 
-  <!-- =======================================================
-  * Template Name: Flexor
-  * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+    .elevora-blog .section-heading p {
+        color: #777;
+        max-width: 650px;
+        margin: 12px auto 0;
+    }
 
-<body class="blog-page">
+    .elevora-blog .blog-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        transition: all .3s ease;
+        height: calc(100% - 30px);
+    }
 
-  <header id="header" class="header sticky-top">
+    .elevora-blog .blog-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
 
-    <div class="topbar d-flex align-items-center dark-background">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+    .elevora-blog .blog-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    .elevora-blog .blog-card-content {
+        padding: 25px;
+    }
+
+    .elevora-blog .blog-category {
+        display: inline-block;
+        color: #f28c18;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .elevora-blog .blog-card h3 {
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+
+    .elevora-blog .blog-card h3 a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    .elevora-blog .blog-card h3 a:hover {
+        color: #f28c18;
+    }
+
+    .elevora-blog .blog-card p {
+        color: #777;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .elevora-blog .blog-meta {
+        font-size: 13px;
+        color: #999;
+        margin-bottom: 15px;
+    }
+
+    .elevora-blog .read-more {
+        color: #f28c18;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .elevora-blog .read-more:hover {
+        color: #d87308;
+    }
+
+    .elevora-blog .sidebar-widget {
+        background: #fafafa;
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .elevora-blog .sidebar-widget h4 {
+        font-size: 19px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    .elevora-blog .category-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .elevora-blog .category-list li {
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+    }
+
+    .elevora-blog .category-list li:last-child {
+        border-bottom: 0;
+    }
+
+    .elevora-blog .category-list a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    .elevora-blog .category-list a:hover {
+        color: #f28c18;
+    }
+
+    .elevora-blog .sidebar-search {
+        display: flex;
+    }
+
+    .elevora-blog .sidebar-search input {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+    }
+
+    .elevora-blog .sidebar-search button {
+        background: #f28c18;
+        color: #fff;
+        border: 0;
+        padding: 0 16px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .elevora-blog .blog-cta {
+        background: #222;
+        color: #fff;
+        padding: 45px 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .elevora-blog .blog-cta h3 {
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .elevora-blog .blog-cta p {
+        color: #ddd;
+    }
+
+    .elevora-blog .blog-cta a {
+        display: inline-block;
+        background: #f28c18;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .elevora-blog .blog-cta a:hover {
+        background: #d87308;
+    }
+
+    @media(max-width: 767px) {
+        .elevora-blog {
+            padding: 40px 0;
+        }
+
+        .elevora-blog .section-heading h2 {
+            font-size: 27px;
+        }
+    }
+</style>
+
+<section class="elevora-blog">
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="section-heading text-center">
+            <h2>Insights, Ideas & Innovation</h2>
+            <p>
+                Explore practical insights, technology trends and expert guidance
+                from ELEVORA Technology Studio. We share ideas that help businesses
+                grow, innovate and succeed in the digital world.
+            </p>
         </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
+        <div class="row">
+
+            <!-- Blog Articles -->
+            <div class="col-lg-8">
+
+                <div class="row">
+
+                    <!-- Article 1 -->
+                    <div class="col-md-6">
+                        <article class="blog-card">
+
+                            <a href="/blog-details/">
+                                <img src="{% static 'core/assets/img/blog/blog-1.jpg' %}"
+                                     alt="Artificial intelligence and business technology">
+                            </a>
+
+                            <div class="blog-card-content">
+                                <span class="blog-category">Tech Trends</span>
+
+                                <div class="blog-meta">
+                                    <i class="bi bi-calendar"></i> November 2026
+                                    &nbsp; | &nbsp;
+                                    <i class="bi bi-person"></i> ELEVORA Team
+                                </div>
+
+                                <h3>
+                                    <a href="/blog-details/">
+                                        How AI Is Transforming Modern Business Operations
+                                    </a>
+                                </h3>
+
+                                <p>
+                                    Discover how artificial intelligence is helping
+                                    businesses automate tasks, improve decision-making
+                                    and deliver better customer experiences.
+                                </p>
+
+                                <a href="/blog-details/" class="read-more">
+                                    Read Article <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="col-md-6">
+                        <article class="blog-card">
+
+                            <a href="/blog-details/">
+                                <img src="{% static 'core/assets/img/blog/blog-2.jpg' %}"
+                                     alt="Software security and updates">
+                            </a>
+
+                            <div class="blog-card-content">
+                                <span class="blog-category">Software Updates</span>
+
+                                <div class="blog-meta">
+                                    <i class="bi bi-calendar"></i> November 2026
+                                    &nbsp; | &nbsp;
+                                    <i class="bi bi-person"></i> ELEVORA Team
+                                </div>
+
+                                <h3>
+                                    <a href="/blog-details/">
+                                        Why Regular Software Updates Matter for Business Security
+                                    </a>
+                                </h3>
+
+                                <p>
+                                    Learn why keeping your website, applications and
+                                    business systems updated is essential for protecting
+                                    data and maintaining reliable digital services.
+                                </p>
+
+                                <a href="/blog-details/" class="read-more">
+                                    Read Article <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="col-md-6">
+                        <article class="blog-card">
+
+                            <a href="/blog-details/">
+                                <img src="{% static 'core/assets/img/blog/blog-3.jpg' %}"
+                                     alt="Responsive website design">
+                            </a>
+
+                            <div class="blog-card-content">
+                                <span class="blog-category">Tutorials</span>
+
+                                <div class="blog-meta">
+                                    <i class="bi bi-calendar"></i> November 2026
+                                    &nbsp; | &nbsp;
+                                    <i class="bi bi-person"></i> ELEVORA Team
+                                </div>
+
+                                <h3>
+                                    <a href="/blog-details/">
+                                        5 Essential Steps to Building a Responsive Business Website
+                                    </a>
+                                </h3>
+
+                                <p>
+                                    A practical guide to creating a professional website
+                                    that looks great on mobile devices, tablets and
+                                    desktop screens.
+                                </p>
+
+                                <a href="/blog-details/" class="read-more">
+                                    Read Article <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- Call to Action -->
+                <div class="blog-cta">
+                    <h3>Ready to Build Something Great?</h3>
+                    <p>
+                        Have an idea or a business challenge? Let's turn it into
+                        a practical digital solution.
+                    </p>
+                    <a href="/contact/">Start a Project</a>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+
+                <!-- Search -->
+                <div class="sidebar-widget">
+                    <h4>Search Articles</h4>
+
+                    <form class="sidebar-search" action="/blog/" method="get">
+                        <input type="text" name="q" placeholder="Search articles...">
+                        <button type="submit" aria-label="Search">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-widget">
+                    <h4>Categories</h4>
+
+                    <ul class="category-list">
+                        <li>
+                            <a href="/blog/">Technology Trends</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Software Updates</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Cybersecurity</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Tutorials & Guides</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Digital Innovation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- About -->
+                <div class="sidebar-widget">
+                    <h4>About ELEVORA</h4>
+
+                    <p>
+                        ELEVORA Technology Studio delivers innovative digital
+                        solutions through web development, mobile applications,
+                        UI/UX design, IT consulting and system integration.
+                    </p>
+
+                    <a href="/about/" class="read-more">
+                        Discover ELEVORA <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Contact -->
+                <div class="sidebar-widget">
+                    <h4>Let's Connect</h4>
+
+                    <p>
+                        Have a question or need help with a digital project?
+                        Our team would love to hear from you.
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-envelope text-warning"></i>
+                        elevora@gmail.com
+                    </p>
+
+                    <p class="mb-0">
+                        <i class="bi bi-telephone text-warning"></i>
+                        +254 712 345 678
+                    </p>
+                </div>
+
+            </div>
+
         </div>
-      </div>
-    </div><!-- End Top Bar -->
-
-    <div class="branding d-flex align-items-cente">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="{% url 'index' %}" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="{% static 'core/assets/img/logo.png' %}" alt=""> -->
-          <h1 class="sitename">Flexor</h1>
-        </a>
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero">Home<br></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-      </div>
-
     </div>
+</section>
 
-  </header>
-
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Blog</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li class="current">Blog</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- Blog Posts Section -->
-    <section id="blog-posts" class="blog-posts section">
-
-      <div class="container">
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Politics</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-2.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author-2.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-3.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author-3.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-4.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Non rem rerum nam cum quo minus olor distincti</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author-4.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Lisa Neymar</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 30, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-5.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Politics</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author-5.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Denis Peterson</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 30, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'core/assets/img/blog/blog-6.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="{% url 'blog_details' %}">Distinctio provident quibusdam numquam aperiam aut</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'core/assets/img/blog/blog-author-6.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mika Lendon</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Feb 14, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-        </div>
-      </div>
-
-    </section><!-- /Blog Posts Section -->
-
-    <!-- Blog Pagination Section -->
-    <section id="blog-pagination" class="blog-pagination section">
-
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <ul>
-            <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#" class="active">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li>...</li>
-            <li><a href="#">10</a></li>
-            <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-    </section><!-- /Blog Pagination Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="{% url 'index' %}" class="logo d-flex align-items-center">
-            <span class="sitename">Flexor</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="#" method="post" class="php-email-form">{% csrf_token %}
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Flexor</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-
-  <!-- Main JS File -->
-  <script src="{% static 'core/assets/js/main.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}
