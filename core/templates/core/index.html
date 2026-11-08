@@ -253,8 +253,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Our Core Services</h2>
+        <p>End-to-end technology services that help businesses build, connect and grow their digital products</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -262,77 +262,74 @@
         <div class="row gy-4">
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
+            <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-activity"></i>
+                <i class="bi bi-code-slash"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
+              <a href="{% url 'service_details' %}#web-development" class="stretched-link">
+                <h3>Web Development</h3>
               </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <p>We build fast, secure websites and web applications tailored to how your business actually works. From company sites to customer portals, every build is responsive, tested and easy to maintain.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-broadcast"></i>
+                <i class="bi bi-phone"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Eosle Commodi</h3>
+              <a href="{% url 'service_details' %}#mobile-apps" class="stretched-link">
+                <h3>Mobile App Development</h3>
               </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <p>We design and build Android and iOS apps that your customers will want to keep on their phones. Offline support, mobile payments and push notifications come built in where you need them.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-easel"></i>
+                <i class="bi bi-lightbulb"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Ledo Markt</h3>
+              <a href="{% url 'service_details' %}#it-consulting" class="stretched-link">
+                <h3>IT Consulting</h3>
               </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <p>We help you choose the right technology before you spend money on it. Our consultants review your current setup and give you a clear, prioritised roadmap.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
+                <i class="bi bi-diagram-3"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
+              <a href="{% url 'service_details' %}#system-integration" class="stretched-link">
+                <h3>System Integration</h3>
               </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
+              <p>We connect the tools you already use so data flows between them without manual re-entry. ERPs, payment gateways, CRMs and legacy databases all work together as one system.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
+                <i class="bi bi-palette"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
+              <a href="{% url 'service_details' %}#ui-ux-design" class="stretched-link">
+                <h3>UI/UX Design</h3>
               </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
+              <p>We design interfaces that are simple to use and look great on every screen. Every design is backed by user research, wireframes and clickable prototypes you can test before we build.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
+                <i class="bi bi-shield-lock"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
+              <a href="{% url 'service_details' %}#cloud-security" class="stretched-link">
+                <h3>Cloud &amp; Cybersecurity</h3>
               </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
+              <p>We move your systems to the cloud and keep them secure, backed up and available. Regular security reviews and monitoring protect your business and your customers&#x27; data.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -352,13 +349,13 @@
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="img">
-                <img src="{% static 'core/assets/img/services-1.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'core/assets/img/services-1.jpg' %}" class="img-fluid" alt="Web Development">
               </div>
               <div class="details">
-                <a href="{% url 'service_details' %}" class="stretched-link">
-                  <h3>Nesciunt Mete</h3>
+                <a href="{% url 'service_details' %}#web-development" class="stretched-link">
+                  <h3>Web Development</h3>
                 </a>
-                <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
+                <p>Custom websites and web apps built on proven frameworks like Django and React. Each one is fast, mobile-friendly and built to grow with your business.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -366,13 +363,13 @@
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="img">
-                <img src="{% static 'core/assets/img/services-2.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'core/assets/img/services-2.jpg' %}" class="img-fluid" alt="Mobile App Development">
               </div>
               <div class="details">
-                <a href="{% url 'service_details' %}" class="stretched-link">
-                  <h3>Eosle Commodi</h3>
+                <a href="{% url 'service_details' %}#mobile-apps" class="stretched-link">
+                  <h3>Mobile App Development</h3>
                 </a>
-                <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+                <p>Android and iOS apps built from a single codebase to save time and cost. We handle everything from the first design to publishing on the app stores.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -380,13 +377,13 @@
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="img">
-                <img src="{% static 'core/assets/img/services-3.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'core/assets/img/services-3.jpg' %}" class="img-fluid" alt="System Integration">
               </div>
               <div class="details">
-                <a href="{% url 'service_details' %}" class="stretched-link">
-                  <h3>Ledo Markt</h3>
+                <a href="{% url 'service_details' %}#system-integration" class="stretched-link">
+                  <h3>System Integration</h3>
                 </a>
-                <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+                <p>We link your ERP, accounting, payments and customer systems through secure APIs. Data entered once shows up everywhere it is needed.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -394,14 +391,13 @@
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="img">
-                <img src="{% static 'core/assets/img/services-4.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'core/assets/img/services-4.jpg' %}" class="img-fluid" alt="UI/UX Design">
               </div>
               <div class="details">
-                <a href="{% url 'service_details' %}" class="stretched-link">
-                  <h3>Asperiores Commodit</h3>
+                <a href="{% url 'service_details' %}#ui-ux-design" class="stretched-link">
+                  <h3>UI/UX Design</h3>
                 </a>
-                <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                <a href="{% url 'service_details' %}" class="stretched-link"></a>
+                <p>Research-led design that makes your product simple and pleasant to use. You see and test clickable prototypes before any code is written.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -530,8 +526,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Our Work</h2>
+        <p>A selection of case studies showing the problems we have solved for our clients</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -540,105 +536,109 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
+            <li data-filter=".filter-web">Web Apps</li>
+            <li data-filter=".filter-mobile">Mobile</li>
+            <li data-filter=".filter-enterprise">Enterprise Solutions</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-1.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-1.jpg' %}" class="img-fluid" alt="Duka Online Storefront">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-1.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Duka Online Storefront</h4>
+                <p>Web Apps · Django</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-1.jpg' %}" title="Duka Online Storefront" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#duka-online" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-2.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-2.jpg' %}" class="img-fluid" alt="ClinicBook Appointments">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-2.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>ClinicBook Appointments</h4>
+                <p>Web Apps · Django</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-2.jpg' %}" title="ClinicBook Appointments" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#clinicbook" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-3.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-3.jpg' %}" class="img-fluid" alt="LearnHub School Portal">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-3.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>LearnHub School Portal</h4>
+                <p>Web Apps · Django</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-3.jpg' %}" title="LearnHub School Portal" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#learnhub" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-4.jpg' %}" class="img-fluid" alt="FarmLink Mobile">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-4.jpg' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>FarmLink Mobile</h4>
+                <p>Mobile · Flutter</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-4.jpg' %}" title="FarmLink Mobile" data-gallery="portfolio-gallery-mobile" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#farmlink" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-5.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-5.jpg' %}" class="img-fluid" alt="RideSafe Boda">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-5.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>RideSafe Boda</h4>
+                <p>Mobile · React Native</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-5.jpg' %}" title="RideSafe Boda" data-gallery="portfolio-gallery-mobile" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#ridesafe" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-6.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-6.jpg' %}" class="img-fluid" alt="PayRent Tenant App">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-6.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>PayRent Tenant App</h4>
+                <p>Mobile · Flutter</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-6.jpg' %}" title="PayRent Tenant App" data-gallery="portfolio-gallery-mobile" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#payrent" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-7.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-enterprise">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-7.jpg' %}" class="img-fluid" alt="Unified Inventory System">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-7.jpg' %}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Unified Inventory System</h4>
+                <p>Enterprise Solutions · Django</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-7.jpg' %}" title="Unified Inventory System" data-gallery="portfolio-gallery-enterprise" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#inventory" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-8.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-enterprise">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-8.jpg' %}" class="img-fluid" alt="HR &amp; Payroll Integration">
               <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-8.jpg' %}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>HR &amp; Payroll Integration</h4>
+                <p>Enterprise Solutions · Python</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-8.jpg' %}" title="HR &amp; Payroll Integration" data-gallery="portfolio-gallery-enterprise" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#hr-payroll" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-9.jpg' %}" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-enterprise">
+              <img src="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-9.jpg' %}" class="img-fluid" alt="Secure Cloud Migration">
               <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-9.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Secure Cloud Migration</h4>
+                <p>Enterprise Solutions · AWS</p>
+                <a href="{% static 'core/assets/img/masonry-portfolio/masonry-portfolio-9.jpg' %}" title="Secure Cloud Migration" data-gallery="portfolio-gallery-enterprise" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'portfolio_details' %}#cloud-migration" title="View case study" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
 
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="{% url 'portfolio_details' %}" class="btn px-4 py-2 rounded-pill" style="color: var(--accent-color); border: 2px solid var(--accent-color);">View all case studies</a>
         </div>
 
       </div>

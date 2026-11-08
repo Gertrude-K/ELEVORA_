@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Flexor Bootstrap Template</title>
+  <title>Our Work - Elevora</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -35,6 +35,19 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .case-study { background: var(--surface-color); border-radius: 8px; padding: 30px; height: 100%; box-shadow: 0 0 25px color-mix(in srgb, var(--default-color), transparent 92%); scroll-margin-top: 120px; }
+    .case-study:target { outline: 2px solid var(--accent-color); }
+    .case-study .case-cat { display: inline-block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); margin-bottom: 8px; }
+    .case-study h3 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .case-study .case-client { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 40%); margin-bottom: 18px; }
+    .case-study h5 { font-size: 15px; font-weight: 700; margin: 16px 0 6px; }
+    .case-study p { margin-bottom: 0; }
+    .case-study ul { list-style: none; padding: 0; margin: 0; }
+    .case-study ul li { padding: 3px 0; display: flex; }
+    .case-study ul li i { color: var(--accent-color); margin-right: 8px; }
+    .case-study .tech span { display: inline-block; font-size: 13px; padding: 4px 10px; margin: 4px 4px 0 0; border-radius: 50px; background: color-mix(in srgb, var(--accent-color), transparent 90%); color: var(--accent-color); }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
@@ -107,17 +120,17 @@
     <!-- Page Title -->
     <div class="page-title">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0">Our Work</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li class="current">Case Studies</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Portfolio Details Section -->
+    <!-- Featured Case Study Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -146,19 +159,19 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="{% static 'core/assets/img/portfolio/app-1.jpg' %}" alt="">
+                  <img src="{% static 'core/assets/img/portfolio/product-1.jpg' %}" alt="Duka Online Storefront product page">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="{% static 'core/assets/img/portfolio/product-1.jpg' %}" alt="">
+                  <img src="{% static 'core/assets/img/portfolio/app-1.jpg' %}" alt="Duka Online Storefront on mobile">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="{% static 'core/assets/img/portfolio/branding-1.jpg' %}" alt="">
+                  <img src="{% static 'core/assets/img/portfolio/branding-1.jpg' %}" alt="Duka Online Storefront order dashboard">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="{% static 'core/assets/img/portfolio/books-1.jpg' %}" alt="">
+                  <img src="{% static 'core/assets/img/portfolio/books-1.jpg' %}" alt="Duka Online Storefront product catalogue">
                 </div>
 
               </div>
@@ -168,19 +181,17 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3>Featured project</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Project</strong>: Duka Online Storefront</li>
+                <li><strong>Category</strong>: Web Apps</li>
+                <li><strong>Client</strong>: Savanna Crafts Co.</li>
+                <li><strong>Technologies</strong>: Django, PostgreSQL, Bootstrap, M-Pesa Daraja API</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h2>E-commerce store with mobile-money checkout</h2>
+              <p>The business took orders only through social media messages, so orders were missed, stock levels were guessed and customers waited days for replies. We built an online store with a product catalogue, shopping cart, mobile-money checkout and an order dashboard that shows staff exactly what to pack and ship.</p>
             </div>
           </div>
 
@@ -188,7 +199,205 @@
 
       </div>
 
-    </section><!-- /Portfolio Details Section -->
+    </section><!-- /Featured Case Study Section -->
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Case Studies</h2>
+        <p>The client problems we solved, how we solved them and the results they achieved</p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-study" id="duka-online">
+              <span class="case-cat">Web Apps</span>
+              <h3>Duka Online Storefront</h3>
+              <div class="case-client">Client: Savanna Crafts Co.</div>
+              <h5>The problem</h5>
+              <p>The business took orders only through social media messages, so orders were missed, stock levels were guessed and customers waited days for replies.</p>
+              <h5>Our solution</h5>
+              <p>We built an online store with a product catalogue, shopping cart, mobile-money checkout and an order dashboard that shows staff exactly what to pack and ship.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Orders confirmed in minutes instead of days</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Online sales tripled within six months</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Stock levels updated automatically with every sale</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Django</span><span>PostgreSQL</span><span>Bootstrap</span><span>M-Pesa Daraja API</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-study" id="clinicbook">
+              <span class="case-cat">Web Apps</span>
+              <h3>ClinicBook Appointments</h3>
+              <div class="case-client">Client: Mwangaza Family Clinic</div>
+              <h5>The problem</h5>
+              <p>Patients queued for hours because the clinic had no booking system, and many booked patients forgot their appointments.</p>
+              <h5>Our solution</h5>
+              <p>We built a web booking system where patients choose a doctor and time slot, receive SMS reminders, and staff manage the daily schedule from one screen.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Average waiting time cut by 40%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Missed appointments down by a quarter</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Front-desk phone calls reduced by half</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Django</span><span>MySQL</span><span>JavaScript</span><span>SMS Gateway API</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-study" id="learnhub">
+              <span class="case-cat">Web Apps</span>
+              <h3>LearnHub School Portal</h3>
+              <div class="case-client">Client: Riverside Academy</div>
+              <h5>The problem</h5>
+              <p>Report cards and fee statements were printed on paper, so parents rarely knew how their children were doing until the end of term.</p>
+              <h5>Our solution</h5>
+              <p>We built a secure portal where teachers upload marks, parents view results and fee balances online, and the school sends announcements to every family at once.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Report cards delivered online to all parents</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Fee collection improved by 30%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Printing costs cut by over 70%</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Django</span><span>PostgreSQL</span><span>Chart.js</span><span>Bootstrap</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-study" id="farmlink">
+              <span class="case-cat">Mobile</span>
+              <h3>FarmLink Mobile</h3>
+              <div class="case-client">Client: Green Valley Farmers Cooperative</div>
+              <h5>The problem</h5>
+              <p>Farmers relied on middlemen to sell their produce and had no way of knowing fair market prices before they sold.</p>
+              <h5>Our solution</h5>
+              <p>We built an Android app that shows daily market prices, lets farmers list produce for buyers and works offline in areas with weak network coverage.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Over 2,000 farmers onboarded in the first year</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Farmers earned 20% more per sale on average</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Works offline and syncs when connected</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Flutter</span><span>Firebase</span><span>Django REST Framework</span><span>Offline sync</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-study" id="ridesafe">
+              <span class="case-cat">Mobile</span>
+              <h3>RideSafe Boda</h3>
+              <div class="case-client">Client: Mji Riders SACCO</div>
+              <h5>The problem</h5>
+              <p>The SACCO had no record of members&#x27; trips, cash payments made daily savings hard to track, and riders had no quick way to call for help.</p>
+              <h5>Our solution</h5>
+              <p>We built a mobile app that logs trips, takes cashless fares, deducts daily savings automatically and includes a one-tap emergency button that shares the rider&#x27;s location.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Member savings contributions up by 35%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Emergency response time under 10 minutes</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Every trip and payment recorded digitally</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>React Native</span><span>Node.js</span><span>Google Maps API</span><span>M-Pesa Daraja API</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-study" id="payrent">
+              <span class="case-cat">Mobile</span>
+              <h3>PayRent Tenant App</h3>
+              <div class="case-client">Client: Kilele Properties</div>
+              <h5>The problem</h5>
+              <p>Rent was collected in cash and recorded in notebooks, which led to disputes, late payments and slow responses to repair requests.</p>
+              <h5>Our solution</h5>
+              <p>We built a tenant app for paying rent by mobile money, receiving instant digital receipts and logging maintenance requests with photos.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>90% of tenants now pay rent through the app</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Late payments dropped by 45%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Repair requests resolved twice as fast</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Flutter</span><span>Django REST Framework</span><span>PostgreSQL</span><span>Push notifications</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-study" id="inventory">
+              <span class="case-cat">Enterprise Solutions</span>
+              <h3>Unified Inventory System</h3>
+              <div class="case-client">Client: Lakeview Distributors</div>
+              <h5>The problem</h5>
+              <p>Three warehouses tracked stock in separate spreadsheets, so the sales team often promised goods that were out of stock.</p>
+              <h5>Our solution</h5>
+              <p>We built a central inventory system connected to the company&#x27;s point-of-sale and accounting software, with barcode scanning and live stock levels for every location.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Stock-outs reduced by 60%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Month-end stock counts done in one day instead of five</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>One live view of stock for every branch</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Django</span><span>PostgreSQL</span><span>REST APIs</span><span>Barcode scanning</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-study" id="hr-payroll">
+              <span class="case-cat">Enterprise Solutions</span>
+              <h3>HR &amp; Payroll Integration</h3>
+              <div class="case-client">Client: Coastline Logistics</div>
+              <h5>The problem</h5>
+              <p>Attendance, HR records and payroll lived in three separate systems, so the payroll team spent days each month copying data by hand.</p>
+              <h5>Our solution</h5>
+              <p>We integrated the biometric attendance system, HR database and payroll software so hours worked, leave and deductions flow straight into each payslip.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Payroll processing cut from 4 days to 4 hours</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Payroll errors reduced by over 90%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Staff view payslips and leave balances online</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>Python</span><span>REST APIs</span><span>PostgreSQL</span><span>Celery</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-study" id="cloud-migration">
+              <span class="case-cat">Enterprise Solutions</span>
+              <h3>Secure Cloud Migration</h3>
+              <div class="case-client">Client: Highland Microfinance</div>
+              <h5>The problem</h5>
+              <p>Core systems ran on a single office server that often went down, and backups were made by hand, putting customer records at risk.</p>
+              <h5>Our solution</h5>
+              <p>We moved the core systems to the cloud, set up automatic daily backups and monitoring, and secured staff access with multi-factor authentication.</p>
+              <h5>Key results</h5>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>System uptime improved to 99.9%</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Full data recovery possible within one hour</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Passed the external security audit</span></li>
+              </ul>
+              <h5>Technologies used</h5>
+              <div class="tech"><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Multi-factor authentication</span></div>
+            </div>
+          </div><!-- End Case Study -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Case Studies Section -->
 
   </main>
 
