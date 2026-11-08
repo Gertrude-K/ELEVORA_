@@ -3,7 +3,7 @@
 
 {% block title %}ELEVORA Blog | Technology Insights{% endblock %}
 
-{% block content %}
+{% block content %} 
 
 <style>
     .elevora-blog {
@@ -345,7 +345,7 @@
                         Have an idea or a business challenge? Let's turn it into
                         a practical digital solution.
                     </p>
-                    <a href="/contact/">Start a Project</a>
+                    <a href="{% url 'index' %}#contact">Start a Project</a>
                 </div>
 
             </div>
@@ -401,7 +401,7 @@
                         UI/UX design, IT consulting and system integration.
                     </p>
 
-                    <a href="/about/" class="read-more">
+                    <a href="{% url 'index' %}#about" class="read-more">
                         Discover ELEVORA <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>

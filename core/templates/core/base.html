@@ -31,19 +31,22 @@
              <h1 class="sitename">Elevora</h1>
            </a>
 
-           <nav id="navmenu" class="navmenu">
-             <ul>
-               <li><a href="{% url 'index' %}#hero" class="active">Home</a></li>
-               <li><a href="{% url 'index' %}#about">About</a></li>
-               <li><a href="{% url 'index' %}#services">Services</a></li>
-               <li><a href="{% url 'index' %}#portfolio">Portfolio</a></li>
-               <li><a href="{% url 'index' %}#team">Team</a></li>
-               <li><a href="{% url 'index' %}#pricing">Pricing</a></li>
-               <li><a href="{% url 'blog' %}">Blog</a></li>
-               <li><a href="{% url 'index' %}#contact">Contact</a></li>
-             </ul>
-             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-           </nav>
+          
+            <nav id="navmenu" class="navmenu">
+              {% with current=request.resolver_match.url_name %}
+            <ul>
+             <li><a href="{% url 'index' %}#hero" {% if current == 'index' %}class="active"{% endif %}>Home</a></li>
+             <li><a href="{% url 'index' %}#about">About</a></li>
+             <li><a href="{% url 'index' %}#services">Services</a></li>
+             <li><a href="{% url 'index' %}#portfolio">Portfolio</a></li>
+             <li><a href="{% url 'index' %}#team">Team</a></li>
+             <li><a href="{% url 'index' %}#pricing">Pricing</a></li>
+             <li><a href="{% url 'blog' %}" {% if 'blog' in current %}class="active"{% endif %}>Blog</a></li>
+             <li><a href="{% url 'index' %}#contact">Contact</a></li>
+            </ul>
+  {% endwith %}
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
          </div>
        </div>
      </header>
