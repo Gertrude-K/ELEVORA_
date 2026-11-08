@@ -2508,3 +2508,59 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+/* Hero text: balanced lines, no lonely last word */
+.welcome h2 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  text-wrap: balance;
+}
+.welcome p {
+  max-width: 720px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-wrap: balance;
+}
+
+/* Icon boxes: smooth lift on hover and clearer body text */
+.icon-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icon-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+.icon-box p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Button: gentle hover feedback */
+.why-box .more-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.why-box .more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+/* Space between hero heading and subtitle */
+.welcome h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* Make the three boxes match the orange card's height */
+.content .col-lg-8 > .d-flex,
+.content .col-lg-8 .row,
+.content .col-lg-8 .icon-box {
+  height: 100%;
+}
+.content .col-lg-8 > .d-flex {
+  width: 100%;
+}
+.content .col-lg-8 .row {
+  flex: 1;
+}
+.hero .welcome h2 {
+  margin-bottom: 0.75rem !important;
+}
+.hero::before {
+  background: rgba(10, 15, 30, 0.4);
+}
+body { outline: 6px solid red !important; }

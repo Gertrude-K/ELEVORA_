@@ -2,11 +2,129 @@
 {% load static %}
 
 
-{% block title %}Index - Flexor Bootstrap Template{% endblock %}
+{% block title %}Home|Elevora{% endblock %}
 
 {% block content %}
 
+<head>
+  <style>
+  /* Stretch the three boxes to the orange card's height */
+  .content .col-lg-8 > .d-flex {
+    justify-content: stretch !important;
+  }
+  .content .col-lg-8 .row {
+    --bs-gutter-y: 0 !important;
+    margin-top: 0 !important;
+    flex: 1 !important;
+  }
+  .content .col-lg-8 .row > * {
+    margin-top: 0 !important;
+  }
 
+  /* Space under the headline */
+  .welcome h2 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Let more of the laptop photo show through */
+  .hero::before {
+    background: rgba(10, 15, 30, 0.4) !important;
+  }
+  .content .icon-box {
+  justify-content: center !important;
+}
+.content .icon-box {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.hero {
+  padding-top: 60px !important;
+}
+/* ===== About: Mission, Vision & Values cards ===== */
+#about .row.mt-4 .bg-white {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .row.mt-4 .bg-white:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Mission and Vision: orange top border and accent heading */
+#about .row.mt-4 > :nth-child(-n+2) .bg-white {
+  border-top: 4px solid var(--accent-color, #ff5a1f);
+  padding: 2rem !important;
+}
+#about .row.mt-4 > :nth-child(-n+2) h4 {
+  color: var(--accent-color, #ff5a1f);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* "Our Core Values" heading with a small orange underline */
+#about .row.mt-4 > .col-12 h4 {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 14px;
+}
+#about .row.mt-4 > .col-12 h4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color, #ff5a1f);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Value cards: orange left border */
+#about .row.mt-4 > :nth-child(n+4) .bg-white {
+  border-left: 4px solid var(--accent-color, #ff5a1f);
+}
+#about .row.mt-4 > :nth-child(n+4) h5 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+/* About image: shorter crop with rounded corners */
+#about .col-lg-5 img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+/* Technologies strip */
+#clients .tech-title {
+  font-weight: 700;
+}
+#clients .tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 30px;
+}
+#clients .tech-item i {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+}
+#clients .tech-item:hover i {
+  transform: translateY(-5px) scale(1.1);
+}
+#clients .tech-item span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+}
+</style>
+</head>
 <body class="index-page">
 
   <header id="header" class="header sticky-top">
@@ -14,8 +132,8 @@
     <div class="topbar d-flex align-items-center dark-background">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@gmail.com">elevora@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+254 712 345 678</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -77,177 +195,242 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="{% static 'core/assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+      <img src="{% static 'core/assets/img/image.png' %}" alt="" data-aos="fade-in">
 
-      <div class="container position-relative">
+ <div class="container position-relative">
 
-        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-          <h2>Welcome to Our Website</h2>
-          <p>We are team of talented designers making websites with Bootstrap</p>
-        </div><!-- End Welcome -->
+  <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+    <h2>Welcome to Elevora, Where Ideas Rise</h2>
+    <p>From stunning websites to secure cloud systems, we build technology that helps your business grow.</p>
+  </div><!-- End Welcome -->
 
-        <div class="content row gy-4">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-              <h3>Why Choose Our Services?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Why Box -->
-
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="d-flex flex-column justify-content-center">
-              <div class="row gy-4">
-
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
-                    <i class="bi bi-clipboard-data"></i>
-                    <h4>Corporis voluptates officia eiusmod</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                  </div>
-                </div><!-- End Icon Box -->
-
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
-                    <i class="bi bi-gem"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                  </div>
-                </div><!-- End Icon Box -->
-
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
-                    <i class="bi bi-inboxes"></i>
-                    <h4>Labore consequatur incidid dolore</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                  </div>
-                </div><!-- End Icon Box -->
-
-              </div>
-            </div>
-          </div>
-        </div><!-- End  Content-->
-
+  <div class="content row gy-4">
+    <div class="col-lg-4 d-flex align-items-stretch">
+      <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+        <h3>Why Choose Elevora?</h3>
+        <p>
+          One team, every digital need. We design, build, connect, and protect your products, from web and mobile apps to cloud systems. Every solution is research-backed, tested before launch, and made to last. Your vision, elevated.
+        </p>
+        <div class="text-center">
+          <a href="#services" class="more-btn"><span>Explore Our Services</span> <i class="bi bi-chevron-right"></i></a>
+        </div>
       </div>
+    </div><!-- End Why Box -->
+
+    <div class="col-lg-8 d-flex align-items-stretch">
+      <div class="d-flex flex-column justify-content-center">
+        <div class="row gy-4">
+
+          <div class="col-xl-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+              <i class="bi bi-code-slash"></i>
+              <h4>Web &amp; Mobile Apps</h4>
+              <p>Fast, secure websites and Android and iOS apps your customers will love to use.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <div class="col-xl-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+              <i class="bi bi-palette"></i>
+              <h4>Design That Delivers</h4>
+              <p>Research-driven UI/UX with prototypes you can test before a single line of code.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <div class="col-xl-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+              <i class="bi bi-shield-lock"></i>
+              <h4>Secure Systems</h4>
+              <p>IT consulting, integration, and cloud security that keep your business safe.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+  </div><!-- End  Content-->
+
+</div>
 
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section light-background">
+<section id="about" class="about section light-background">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="row gy-4">
+    <div class="row gy-4">
 
-          <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-            <img src="{% static 'core/assets/img/about.jpg' %}" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-          </div>
-
-          <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">
-            <h3>About Us</h3>
-            <p>
-              Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas deleniti. Sit quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti totam ut eius incidunt reiciendis veritatis asperiores placeat.
-            </p>
-            <ul>
-              <li>
-                <i class="bi bi-diagram-3"></i>
-                <div>
-                  <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                  <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
-                </div>
-              </li>
-              <li>
-                <i class="bi bi-fullscreen-exit"></i>
-                <div>
-                  <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                  <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
-                </div>
-              </li>
-              <li>
-                <i class="bi bi-broadcast"></i>
-                <div>
-                  <h5>Voluptatem et qui exercitationem</h5>
-                  <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
-                </div>
-              </li>
-              <li>
-                <i class="bi bi-buildings"></i>
-                <div>
-                  <h5><del></del>istinctio dolorum </h5>
-                  <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
+      <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static 'core/assets/img/team-coding.jpg' %}" class="img-fluid" alt="The Elevora team at work">
+        <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a> -->
       </div>
 
-    </section><!-- /About Section -->
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'core/assets/img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
+      <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">
+        <h3>Who We Are</h3>
+        <p>
+          Elevora is a technology studio built on a simple belief: great ideas deserve great execution. We grew from a passion for web design and technology into a team that designs, builds, connects, and protects digital products for businesses of every size. Our name comes from elevation, lifting brands, products, and experiences to a higher standard.
+        </p>
+        <ul>
+          <li>
+            <i class="bi bi-diagram-3"></i>
+            <div>
+              <h5>Connected Systems</h5>
+              <p>We link your tools, data, and teams so everything works together as one.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-fullscreen-exit"></i>
+            <div>
+              <h5>Focused on Your Goals</h5>
+              <p>We start with what you want to achieve, then build only what moves you toward it.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-broadcast"></i>
+            <div>
+              <h5>Support That Stays</h5>
+              <p>Launch is the beginning. We monitor, maintain, and improve long after go-live.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-buildings"></i>
+            <div>
+              <h5>Built for Business</h5>
+              <p>Secure, scalable solutions that grow with your company, from startup to enterprise.</p>
+            </div>
+          </li>
+        </ul>
       </div>
 
-    </section><!-- /Clients Section -->
+    </div>
 
+    <!-- Mission, Vision and Values -->
+    <div class="row gy-4 mt-4">
+
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h4>Our Mission</h4>
+          <p class="mb-0">To empower businesses with reliable, well-designed technology that solves real problems and drives lasting growth.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h4>Our Vision</h4>
+          <p class="mb-0">To be the trusted technology partner that businesses turn to when they want to build something exceptional and make it last.</p>
+        </div>
+      </div>
+
+      <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="text-center mt-3">Our Core Values</h4>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h5>Innovation</h5>
+          <p class="mb-0">We explore new ideas and tools so your product stays ahead.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h5>Reliability</h5>
+          <p class="mb-0">We deliver what we promise, on time, and stand behind it after launch.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h5>Scalability</h5>
+          <p class="mb-0">We build systems that grow smoothly with your business.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h5>Security</h5>
+          <p class="mb-0">We protect your data and your customers' trust at every layer.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-white p-4 h-100 rounded shadow-sm">
+          <h5>Client Focus</h5>
+          <p class="mb-0">We listen first, so every solution fits your real goals.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+<</section><!-- /About Section -->
+
+<!-- Technologies Section -->
+<section id="clients" class="clients section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <h3 class="text-center mb-4 tech-title">Technologies We Use</h3>
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 3000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": { "slidesPerView": 2, "spaceBetween": 30 },
+            "480": { "slidesPerView": 3, "spaceBetween": 40 },
+            "640": { "slidesPerView": 4, "spaceBetween": 50 },
+            "992": { "slidesPerView": 6, "spaceBetween": 60 }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper align-items-center">
+
+        <!-- Web -->
+        <div class="swiper-slide tech-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-wordpress-plain colored"></i><span>WordPress</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+
+        <!-- Languages and backend -->
+        <div class="swiper-slide tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-go-original colored"></i><span>Go</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-rust-plain"></i><span>Rust</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+
+        <!-- Mobile -->
+        <div class="swiper-slide tech-item"><i class="devicon-kotlin-plain colored"></i><span>Kotlin</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-react-original colored"></i><span>React Native</span></div>
+
+        <!-- Cloud -->
+        <div class="swiper-slide tech-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+        <div class="swiper-slide tech-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Technologies Section -->
     <!-- Services Section -->
     <section id="services" class="services section light-background">
 
