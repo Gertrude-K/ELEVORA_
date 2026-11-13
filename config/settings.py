@@ -134,3 +134,4 @@ ALLOWED_HOSTS = [".vercel.app", "127.0.0.1", "localhost"]
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+DEBUG = os.environ.get("DEBUG", "True") == "True"

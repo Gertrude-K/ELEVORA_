@@ -132,8 +132,24 @@
   width: 100%;
   height: 100%;
   object-fit: cover;          /* crop to fill, never stretch */
-  object-position: top center; /* keep faces in frame */
+  object-position: top center;
 }
+   /* keep faces in frame */
+
+.contact-btn {
+  background: #ff5a1f;
+  color: #fff;
+  border: 0;
+  padding: 12px 36px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.contact-btn:hover {
+  o
+  .contact-form {
+  margin-top: 40px;
+}
+
 
 </style>
 </head>
@@ -1093,37 +1109,31 @@
           </div><!-- End Info Item -->
 
         </div>
+   
 
-        <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
-          {% csrf_token %}
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Tell us about your project" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-
-              <button type="submit">Send Message</button>
-            </div>
-
-          </div>
-        </form><!-- End Contact Form -->
+        <form action="{% url 'contact' %}" method="post" class="contact-form mt-5">
+  {% csrf_token %}
+  <div class="row gy-4">
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="col-12">
+      <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+    </div>
+    <div class="col-12">
+      <textarea name="message" class="form-control" rows="6" placeholder="Tell us about your project" required></textarea>
+    </div>
+   <div class="col-12 text-center">
+    <button type="submit" class="contact-btn">Send Message</button>
+     </div>
+     <div class="col-12">
+  <div id="form-status"></div>
+     </div>
+     </div>
+</form>
 
       </div>
 
@@ -1191,5 +1201,37 @@
     </div>
 
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+  const btn = form.querySelector(".contact-btn");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();               // stops the page reload
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),     // includes the CSRF token
+        headers: { "X-Requested-With": "XMLHttpRequest" }
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error();
+      status.className = "alert alert-success mt-3";
+      status.textContent = data.message;
+      form.reset();
+    } catch (err) {
+      status.className = "alert alert-danger mt-3";
+      status.textContent = "Something went wrong. Please try again.";
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Send Message";
+  });
+});
+</script>
 
 {% endblock %}
