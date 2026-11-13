@@ -128,6 +128,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
 DEBUG = False
 SECRET_KEY = os.environ.get("SECRET_KEY", "change-this-locally")
 ALLOWED_HOSTS = [".vercel.app", "127.0.0.1", "localhost"]
@@ -135,3 +136,5 @@ ALLOWED_HOSTS = [".vercel.app", "127.0.0.1", "localhost"]
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEFAULT_FROM_EMAIL = 'Elevora <elevora@localhost>'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
